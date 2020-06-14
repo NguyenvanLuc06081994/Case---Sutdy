@@ -19,3 +19,23 @@ function addPlayer() {
     display(FootballClub.getHtmlFC());
     document.getElementById('form-add').reset();
 }
+
+let img1 = document.getElementById('edit-img');
+let name1 = document.getElementById('edit-name');
+let age1 = document.getElementById('edit-age');
+let position1 = document.getElementById('edit-position');
+let country1 = document.getElementById('edit-country');
+let transferPrice1 = document.getElementById('edit-transferPrice');
+let countId = 0;
+
+function edit(id) {
+    document.getElementById('form-edit').style.display = "inline-block";
+    let player = FootballClub.getPlayerByID(id);
+    img1.value = player.img;
+    name1.value = player.name;
+    age1.value = player.age;
+    position1.value = player.position;
+    country1.value = player.country;
+    transferPrice1.value = player.transferPrice;
+    countId = id;
+}
