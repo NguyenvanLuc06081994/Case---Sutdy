@@ -64,4 +64,14 @@ class Player {
         this.country = country;
         this.transferPrice = transferPrice;
     }
+    getHtmlPlayer(){
+        let html =`<td><img src="${this.img}" alt=""></td>
+                   <td>${this.name}</td>
+                   <td>${this.age}</td>
+                   <td>${this.position}</td>
+                   <td>${this.country}</td>
+                   <td>${this.transferPrice}</td>`;
+        return html;
+    }
+
 }
