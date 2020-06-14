@@ -1,6 +1,6 @@
 class Player {
-    constructor(img,name, age, position, country, transferPrice) {
-        this.img = img;
+    constructor(img, name, age, position, country, transferPrice) {
+        this.img = "";
         this.name = name;
         this.age = age;
         this.position = position;
@@ -64,8 +64,9 @@ class Player {
         this.country = country;
         this.transferPrice = transferPrice;
     }
-    getHtmlPlayer(){
-        let html =`<td><img src="${this.img}" alt=""></td>
+
+    getHtmlPlayer() {
+        let html = `<td><img src="${this.img}"></td>
                    <td>${this.name}</td>
                    <td>${this.age}</td>
                    <td>${this.position}</td>

@@ -1,11 +1,10 @@
-let FootballClub = new FootballClub("U23 Viet Nam");
-FootballClub.getInit();
-
+let footballClub = new FootballClub("Ha Noi");
+footballClub.getInit();
 function display(table) {
     document.getElementById('display').innerHTML = table;
 }
 
-display(FootballClub.getHtmlFC());
+display(footballClub.getHtmlFC());
 
 function addPlayer() {
     let img = document.getElementById('player-img').value;
@@ -15,8 +14,8 @@ function addPlayer() {
     let country = document.getElementById('player-country').value;
     let transferPrice = document.getElementById('player-transferPrice').value;
     let player = new Player(img, name, age, position, country, transferPrice);
-    FootballClub.AddPlayer(player);
-    display(FootballClub.getHtmlFC());
+    footballClub.addPlayers(player);
+    display(footballClub.getHtmlFC());
     document.getElementById('form-add').reset();
 }
 
@@ -30,13 +29,13 @@ let countId = 0;
 
 function edit(id) {
     document.getElementById('form-edit').style.display = "inline-block";
-    let player = FootballClub.getPlayerByID(id);
-    img1.value = player.img;
-    name1.value = player.name;
-    age1.value = player.age;
-    position1.value = player.position;
-    country1.value = player.country;
-    transferPrice1.value = player.transferPrice;
+    let player1 = footballClub.getPlayerByID(id);
+    img1.value = player1.img;
+    name1.value = player1.name;
+    age1.value = player1.age;
+    position1.value = player1.position;
+    country1.value = player1.country;
+    transferPrice1.value = player1.transferPrice;
     countId = id;
 }
 
@@ -47,8 +46,12 @@ function editPlayer() {
     let position = position1.value;
     let country = country1.value;
     let transferPrice = transferPrice1.value;
-    FootballClub.players[countId].edit(img, name, age, position, country,transferPrice);
-    display(FootballClub.getHtmlFC());
+    footballClub.players[countId].edit(img, name, age, position, country, transferPrice);
+    display(footballClub.getHtmlFC());
     document.getElementById('form-edit').reset();
     document.getElementById('form-edit').style.display = "none";
+}
+function del(id) {
+    footballClub.deletePlayer(id);
+    display(footballClub.getHtmlFC());
 }

@@ -9,17 +9,17 @@ class FootballClub {
         for (let i = 0; i < this.dataPlayer.length; i++) {
             let player = new Player(this.dataPlayer[i].img, this.dataPlayer[i].name, this.dataPlayer[i].age,
                 this.dataPlayer[i].position, this.dataPlayer[i].country, this.dataPlayer[i].transferPrice);
-            this.AddPlayer(player);
+            this.addPlayers(player);
         }
 
     }
 
-    AddPlayer(player) {
+    addPlayers(player) {
         this.players.push(player);
     }
 
-    editPlayer(player, img, name, age, position, country, transferPrice) {
-        player.edit(img, name, age, position, country, transferPrice);
+    editPlayers(player, name, age, position, country, transferPrice) {
+        player.edit( name, age, position, country, transferPrice);
     }
 
     deletePlayer(id) {
