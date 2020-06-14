@@ -1,6 +1,6 @@
 class Player {
     constructor(img, name, age, position, country, transferPrice) {
-        this.img = "";
+        this.img = "https://cdn3.iconfinder.com/data/icons/soccer-players/100/color_2-30-512.png";
         this.name = name;
         this.age = age;
         this.position = position;

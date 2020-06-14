@@ -1,0 +1,16 @@
+form{
+    width: 400px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+input {
+    margin-bottom: 10px;
+}
+img {
+    width: 50px;
+}
+
+td:first-child {
+    padding: 5px!important;
+}
