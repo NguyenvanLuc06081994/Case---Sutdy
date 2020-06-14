@@ -39,3 +39,16 @@ function edit(id) {
     transferPrice1.value = player.transferPrice;
     countId = id;
 }
+
+function editPlayer() {
+    let img = img1.value;
+    let name = name1.value;
+    let age = age1.value;
+    let position = position1.value;
+    let country = country1.value;
+    let transferPrice = transferPrice1.value;
+    FootballClub.players[countId].edit(img, name, age, position, country,transferPrice);
+    display(FootballClub.getHtmlFC());
+    document.getElementById('form-edit').reset();
+    document.getElementById('form-edit').style.display = "none";
+}

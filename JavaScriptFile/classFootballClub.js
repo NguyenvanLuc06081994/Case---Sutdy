@@ -29,7 +29,8 @@ class FootballClub {
     getPlayerByID(id) {
         return this.players[id];
     }
-    getHtmlFC(){
+
+    getHtmlFC() {
         let table = `<table>
                     <tr>
                         <th>Image</th>
@@ -39,13 +40,14 @@ class FootballClub {
                         <th>Country</th>
                         <th>Transfer Price</th>
                     </tr>`;
-        for (let i = 0; i <this.players.length ; i++) {
-            table += "<tr>" + this.players[i].getHtmlPlayer() +this.getButton(i) + '</tr>';
+        for (let i = 0; i < this.players.length; i++) {
+            table += "<tr>" + this.players[i].getHtmlPlayer() + this.getButton(i) + '</tr>';
         }
         table += "</table>"
         return table;
     }
-    getButton(id){
+
+    getButton(id) {
         let button = `<td><button onclick="edit(${id})">Edit</button></td>
                       <td><button onclick="del(${id})">Delete</button></td>`;
         return button;
