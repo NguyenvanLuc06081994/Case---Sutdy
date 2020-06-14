@@ -1,7 +1,11 @@
+const PLAYER = "player";
 let footballClub = new FootballClub("Ha Noi");
 footballClub.getInit();
+footballClub.data = loadData();
+
 function display(table) {
     document.getElementById('display').innerHTML = table;
+    saveData();
 }
 
 display(footballClub.getHtmlFC());
@@ -51,7 +55,16 @@ function editPlayer() {
     document.getElementById('form-edit').reset();
     document.getElementById('form-edit').style.display = "none";
 }
+
 function del(id) {
     footballClub.deletePlayer(id);
     display(footballClub.getHtmlFC());
+}
+
+function saveData() {
+    localStorage.setItem(PLAYER, JSON.stringify(footballClub.players));
+}
+
+function loadData() {
+    return localStorage.hasOwnProperty(PLAYER) ? JSON.parse(localStorage.getItem(PLAYER)) : [];
 }
