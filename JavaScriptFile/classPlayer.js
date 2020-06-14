@@ -1,10 +1,15 @@
 class Player {
-    constructor(name, age, position, country, transferPrice) {
+    constructor(img,name, age, position, country, transferPrice) {
+        this.img = img;
         this.name = name;
         this.age = age;
         this.position = position;
         this.country = country;
         this.transferPrice = transferPrice;
+    }
+
+    getImg() {
+        return this.img;
     }
 
     getName() {
@@ -27,6 +32,10 @@ class Player {
         return this.transferPrice;
     }
 
+    setImg(img) {
+        this.img = img;
+    }
+
     setName(name) {
         this.name = name;
     }
@@ -46,7 +55,9 @@ class Player {
     setTransferPrice(transferPrice) {
         this.transferPrice = transferPrice;
     }
-    edit(name,age,position,country,transferPrice){
+
+    edit(img, name, age, position, country, transferPrice) {
+        this.img = img;
         this.name = name;
         this.age = age;
         this.position = position;
