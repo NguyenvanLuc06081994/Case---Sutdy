@@ -31,7 +31,7 @@ class FootballClub {
     }
 
     getHtmlFC() {
-        let table = `<table>
+        let table = `<table border="0px solid black" cellspacing="0" class="table table-striped">
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
@@ -48,8 +48,8 @@ class FootballClub {
     }
 
     getButton(id) {
-        let button = `<td><button onclick="edit(${id})">Edit</button></td>
-                      <td><button onclick="del(${id})">Delete</button></td>`;
+        let button = `<td><button  class="btn btn-warning" onclick="edit(${id})">Edit</button></td>
+                      <td><button  class="btn btn-warning" onclick="del(${id})">Delete</button></td>`;
         return button;
     }
 }
