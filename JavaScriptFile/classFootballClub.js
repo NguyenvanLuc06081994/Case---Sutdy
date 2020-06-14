@@ -48,8 +48,8 @@ class FootballClub {
     }
 
     getButton(id) {
-        let button = `<td><button class="btn btn-success"  onclick="edit(${id})">Edit</button></td>
-                      <td><button class="btn btn-success"  onclick="del(${id})">Delete</button></td>`;
+        let button = `<td><button class="btn btn-warning"  onclick="edit(${id})">Edit</button></td>
+                      <td><button class="btn btn-warning"  onclick="del(${id})">Delete</button></td>`;
         return button;
     }
 }

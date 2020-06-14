@@ -1,7 +1,7 @@
 const PLAYER = "player";
 let footballClub = new FootballClub("Ha Noi");
 footballClub.getInit();
-footballClub.data = loadData();
+footballClub.dataPlayer = loadData();
 
 function display(table) {
     document.getElementById('display').innerHTML = table;
@@ -18,8 +18,13 @@ function addPlayer() {
     let country = document.getElementById('player-country').value;
     let transferPrice = document.getElementById('player-transferPrice').value;
     let player = new Player(img, name, age, position, country, transferPrice);
-    footballClub.addPlayers(player);
-    display(footballClub.getHtmlFC());
+    if (img === '' || name === '' || age === '' || position === '' || country === '' || transferPrice === '') {
+        alert("Please. Write Full Information");
+    } else {
+        footballClub.addPlayers(player);
+        display(footballClub.getHtmlFC());
+    }
+
     document.getElementById('form-add').reset();
 }
 
@@ -50,8 +55,13 @@ function editPlayer() {
     let position = position1.value;
     let country = country1.value;
     let transferPrice = transferPrice1.value;
-    footballClub.players[countId].edit(img, name, age, position, country, transferPrice);
-    display(footballClub.getHtmlFC());
+    if (img === '' || name === '' || age === '' || position === '' || country === '' || transferPrice === ''){
+        alert(" Please. Write Full Information");
+    }else{
+        footballClub.players[countId].edit(img, name, age, position, country, transferPrice);
+        display(footballClub.getHtmlFC());
+    }
+
     document.getElementById('form-edit').reset();
     document.getElementById('form-edit').style.display = "none";
 }
