@@ -5,7 +5,7 @@
     <title>Football Club</title>
 </head>
 <body>
-<form action="" >
+<form action="" id="form-add">
     <fieldset>
     <legend>ADD PLAYER</legend>
         <input type="text" id="player-name" placeholder="Name">
@@ -14,7 +14,19 @@
          <input type="text" id="player-country" placeholder="country">
         <input type="text" id="player-transferPrice" placeholder="Price">
         <input type="text" id="player-img" placeholder="Image">
-        <button type="button" onclick="AddPlayer()">ADD PLAYER</button>
+        <button type="button" onclick="addPlayer()">ADD PLAYER</button>
+    </fieldset>
+</form>
+<form action="" id="form-edit">
+    <fieldset>
+        <legend>ADD PLAYER</legend>
+        <input type="text" id="edit-name" placeholder="Name">
+        <input type="text" id="edit-age" placeholder="Age">
+        <input type="text" id="edit-position" placeholder="Position">
+        <input type="text" id="edit-country" placeholder="country">
+        <input type="text" id="edit-transferPrice" placeholder="Price">
+        <input type="text" id="edit" placeholder="Image">
+        <button type="button" onclick="editPlayer()">Save</button>
     </fieldset>
 </form>
 <div id="display"></div>
